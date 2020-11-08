@@ -1,0 +1,247 @@
+decision_restrictpop_limited_rights_living_banned_on = {
+	icon = default
+	owned_planets_only = yes
+	enactment_time = 1
+
+	resources = {
+		category = decisions
+		cost = { 
+			influence = 10
+		}
+	}
+	
+	potential = {
+		owner = { has_policy_flag = residentliving_restricted }
+		NOT = { has_planet_flag = limited_rights_living_banned }
+	}
+
+	effect = {
+		custom_tooltip = decision_restrictpop_limited_rights_living_banned_on_tooltip
+		hidden_effect = {
+			set_planet_flag = limited_rights_living_banned
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_restrictpop_limited_rights_living_banned_off = {
+	icon = default
+	owned_planets_only = yes
+	enactment_time = 1
+
+	resources = {
+		category = decisions
+		cost = { 
+			influence = 10
+		}
+	}
+	
+	potential = {
+		owner = { has_policy_flag = residentliving_restricted }
+		has_planet_flag = limited_rights_living_banned
+	}
+
+	effect = {
+		custom_tooltip = decision_restrictpop_limited_rights_living_banned_off_tooltip
+		hidden_effect = {
+			remove_planet_flag = limited_rights_living_banned
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_restrictpop_resident_breeding_banned_on = {
+	icon = default
+	owned_planets_only = yes
+	enactment_time = 1
+
+	resources = {
+		category = decisions
+		cost = { 
+			influence = 10
+		}
+	}
+	
+	potential = {
+		owner = { has_policy_flag = residentbreeding_restricted }
+		NOR = { 
+			has_planet_flag = limited_rights_breeding_banned 
+			has_planet_flag = limited_rights_living_banned
+		}
+	}
+
+	effect = {
+		custom_tooltip = decision_restrictpop_resident_breeding_banned_on_tooltip
+		hidden_effect = {
+			set_planet_flag = limited_rights_breeding_banned
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_restrictpop_resident_breeding_banned_off = {
+	icon = default
+	owned_planets_only = yes
+	enactment_time = 1
+
+	resources = {
+		category = decisions
+		cost = { 
+			influence = 10
+		}
+	}
+	
+	potential = {
+		owner = { has_policy_flag = residentbreeding_restricted }
+		has_planet_flag = limited_rights_breeding_banned
+		NOT = { has_planet_flag = limited_rights_living_banned }
+	}
+
+	effect = { 
+		custom_tooltip = decision_restrictpop_resident_breeding_banned_off_tooltip
+		hidden_effect = {
+			remove_planet_flag = limited_rights_breeding_banned
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+
+
+
+
+
+decision_restrictpop_slaves_living_banned_on = {
+	icon = decision_slave_colony
+	owned_planets_only = yes
+	enactment_time = 1
+
+	resources = {
+		category = decisions
+		cost = { 
+			influence = 10
+		}
+	}
+	
+	potential = {
+		owner = { has_policy_flag = slaveliving_restricted }
+		NOT = { has_planet_flag = slave_living_banned }
+	}
+
+	effect = {
+		custom_tooltip = decision_restrictpop_slaves_living_banned_on_tooltip
+		hidden_effect = {
+			set_planet_flag = slave_living_banned
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_restrictpop_slaves_living_banned_off = {
+	icon = decision_slave_colony
+	owned_planets_only = yes
+	enactment_time = 1
+
+	resources = {
+		category = decisions
+		cost = { 
+			influence = 10
+		}
+	}
+	
+	potential = {
+		owner = { has_policy_flag = slaveliving_restricted }
+		has_planet_flag = slave_living_banned
+	}
+
+	effect = {
+		custom_tooltip = decision_restrictpop_slaves_living_banned_off_tooltip
+		hidden_effect = {
+			remove_planet_flag = slave_living_banned
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+
+decision_restrictpop_slaves_breeding_allowed_on = {
+	icon = decision_slave_colony
+	owned_planets_only = yes
+	enactment_time = 1
+
+	resources = {
+		category = decisions
+		cost = { 
+			influence = 10
+		}
+	}
+	
+	potential = {
+		owner = { has_policy_flag = slavebreeding_restricted }
+		NOR = { 
+			has_planet_flag = slave_living_banned
+			has_planet_flag = slave_breeding_allowed 
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+
+	effect = {
+		custom_tooltip = decision_restrictpop_slaves_breeding_allowed_on_tooltip
+		hidden_effect = {
+			set_planet_flag = slave_breeding_allowed
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_restrictpop_slaves_breeding_allowed_off = {
+	icon = decision_slave_colony
+	owned_planets_only = yes
+	enactment_time = 1
+
+	resources = {
+		category = decisions
+		cost = { 
+			influence = 10
+		}
+	}
+	
+	potential = {
+		owner = { has_policy_flag = slavebreeding_restricted }
+		has_planet_flag = slave_breeding_allowed
+		NOT = { has_planet_flag = slave_living_banned }
+        NOT = { has_modifier = slave_colony }
+	}
+
+	effect = {
+		custom_tooltip = decision_restrictpop_slaves_breeding_allowed_off_tooltip
+		hidden_effect = {
+			remove_planet_flag = slave_breeding_allowed
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

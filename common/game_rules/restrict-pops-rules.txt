@@ -1,0 +1,93 @@
+#Root = planet
+#This = species
+species_can_live_on_planet = {
+	exists = root #somehow this appeared in the error log. No idea how!
+	NAND = {
+		root = { is_planet_class = pc_machine }
+		NOR = {
+			has_trait = trait_machine_unit
+			has_trait = trait_mechanical
+			AND = {
+				has_trait = trait_cybernetic
+				exists = root.owner
+				root.owner = {
+					has_authority = auth_machine_intelligence
+					has_civic = civic_machine_assimilator # Assimilator empire
+				}
+			}
+		}
+	}
+	NAND = {
+		root = { is_planet_class = pc_hive }
+		NOT = { has_trait = trait_hive_mind }
+	}
+	custom_tooltip = {
+		fail_text = RESIDENT_LIVING_RESTRICTED
+		exists = root.owner
+		NAND = {
+			root.owner = {
+				has_policy_flag = residentliving_restricted
+			}
+			root = { has_planet_flag = limited_rights_living_banned }
+			has_citizenship_type = { type = citizenship_limited country = root.owner }
+		}
+	}
+	custom_tooltip = {
+		fail_text = SLAVE_LIVING_RESTRICTED
+		exists = root.owner
+		NAND = {
+			root.owner = {
+				has_policy_flag = slaveliving_restricted
+			}
+			root = { has_planet_flag = slave_living_banned }
+			has_citizenship_type = { type = citizenship_slavery country = root.owner }
+		}
+	}
+}
+
+
+# Checks if a pop can procreate
+# This = Species
+# Root = Planet
+can_species_procreate = {
+	is_sapient = yes
+	NOR = {
+		has_trait = trait_machine_unit
+		has_trait = trait_mechanical
+	}
+	NAND = {
+		root = { has_modifier = slave_colony }
+		NOT = { has_citizenship_type = { type = citizenship_slavery country = root.owner } }
+	}
+	NAND = {
+		root.owner = {
+			has_policy_flag = residentbreeding_restricted
+		}
+		root = { has_planet_flag = limited_rights_breeding_banned }
+		has_citizenship_type = { type = citizenship_limited country = root.owner }
+	}
+	NAND = {
+		root.owner = {
+			has_policy_flag = slavebreeding_restricted
+		}
+		root = { 
+			NOR = {
+				has_planet_flag = slave_breeding_allowed
+				has_modifier = slave_colony
+			}			
+		}
+		has_citizenship_type = { type = citizenship_slavery country = root.owner }
+	}
+	if = {
+		limit = {
+			has_trait = trait_necrophage
+		}
+		NOT = {
+			root = {
+				any_owned_species = {
+					species_can_be_necrophaged = yes
+				}
+			}
+		}
+	}
+}

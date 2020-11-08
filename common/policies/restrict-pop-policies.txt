@@ -1,0 +1,171 @@
+residentliving = {
+	potential = {
+		NOT = { has_ethic = "ethic_gestalt_consciousness" }
+	}
+	
+	option = {
+		name = "residentliving_everywhere"
+		
+		policy_flags = {
+			residentliving_everywhere
+		}
+		
+		AI_weight = {
+			modifier = {
+				factor = 100
+			}	
+		}
+	}
+	
+	option = {
+		name = "residentliving_restricted"
+		
+		policy_flags = {
+			residentliving_restricted
+		}
+
+		valid = {
+			NOR = {
+				has_ethic = ethic_egalitarian
+				has_ethic = ethic_fanatic_egalitarian
+			}
+		}
+		
+		AI_weight = {
+			modifier = {
+				factor = 0
+			}						
+		}
+	}
+}
+
+residentbreeding = {
+	potential = {
+		NOT = { has_ethic = "ethic_gestalt_consciousness" }
+	}
+	
+	option = {
+		name = "residentbreeding_everywhere"
+		
+		policy_flags = {
+			residentbreeding_everywhere
+		}
+		
+		AI_weight = {
+			modifier = {
+				factor = 100
+			}	
+		}
+	}
+	
+	option = {
+		name = "residentbreeding_restricted"
+		
+		policy_flags = {
+			residentbreeding_restricted
+		}
+
+		valid = {
+			NOR = {
+				has_ethic = ethic_egalitarian
+				has_ethic = ethic_fanatic_egalitarian
+			}
+		}
+		
+		AI_weight = {
+			modifier = {
+				factor = 0
+			}						
+		}
+	}
+}
+
+
+slaveliving = {
+	potential = {
+		NOT = { has_ethic = "ethic_gestalt_consciousness" }
+		NOT = { is_subject_type = signatory }
+		OR = {
+			has_ethic = ethic_authoritarian
+			has_ethic = ethic_fanatic_authoritarian
+			has_ethic = ethic_xenophobe
+			has_ethic = ethic_fanatic_xenophobe
+		}
+	}
+	
+	option = {
+		name = "slaveliving_everywhere"
+		
+		policy_flags = {
+			slaveliving_everywhere
+		}
+		
+		AI_weight = {
+			modifier = {
+				factor = 100
+			}	
+		}
+	}
+	
+	option = {
+		name = "slaveliving_restricted"
+		
+		policy_flags = {
+			slaveliving_restricted
+		}
+
+		AI_weight = {
+			modifier = {
+				factor = 0
+			}						
+		}
+	}
+}
+
+slavebreeding = {
+	potential = {
+		NOT = { has_ethic = "ethic_gestalt_consciousness" }
+		NOT = { is_subject_type = signatory }
+		OR = {
+			has_ethic = ethic_authoritarian
+			has_ethic = ethic_fanatic_authoritarian
+			has_ethic = ethic_xenophobe
+			has_ethic = ethic_fanatic_xenophobe
+		}
+	}
+	
+	option = {
+		name = "slavebreeding_everywhere"
+		
+		policy_flags = {
+			slavebreeding_everywhere
+		}
+		
+		AI_weight = {
+			modifier = {
+				factor = 100
+			}	
+		}
+	}
+	
+	option = {
+		name = "slavebreeding_restricted"
+		
+		policy_flags = {
+			slavebreeding_restricted
+		}
+
+		valid = {
+			NOR = {
+				has_ethic = ethic_egalitarian
+				has_ethic = ethic_fanatic_egalitarian
+			}
+		}
+		
+		AI_weight = {
+			modifier = {
+				factor = 0
+			}						
+		}
+	}
+}
