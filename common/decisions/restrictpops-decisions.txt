@@ -1,3 +1,105 @@
+decision_restrictpop_summary = {
+	icon = glitchy_matrix
+	owned_planets_only = yes
+
+	potential = {
+		owner = {
+			OR = {
+				has_policy_flag = residentliving_restricted
+				has_policy_flag = residentliving_restricted_habs
+				has_policy_flag = residentbreeding_restricted
+				has_policy_flag = residentbreeding_restricted_habs
+				has_policy_flag = slaveliving_restricted
+				has_policy_flag = slaveliving_restricted_habs
+				has_policy_flag = slavebreeding_restricted
+				has_policy_flag = slavebreeding_restricted_habs
+			}
+		}
+	}
+
+	allow = {		
+		custom_tooltip = {
+			fail_text = RESIDENT_LIVING_RESTRICTED
+			NAND = {
+				owner = {
+					has_policy_flag = residentliving_restricted
+				}
+				has_planet_flag = limited_rights_living_banned
+			}
+			NAND = {
+				owner = {
+					has_policy_flag = residentliving_restricted_habs
+				}
+				is_habitable_structre = yes
+			}			
+		}
+		custom_tooltip = {
+			fail_text = SLAVE_LIVING_RESTRICTED
+			exists = root.owner
+			NAND = {
+				owner = {
+					has_policy_flag = slaveliving_restricted
+				}
+				has_planet_flag = slave_living_banned
+			}
+			NAND = {
+				owner = {
+					has_policy_flag = slaveliving_restricted_habs
+				}
+				is_habitable_structre = yes
+			}
+		}
+		custom_tooltip = {
+			fail_text = RESIDENT_BREEDING_RESTRICTED
+			NAND = {
+				owner = {
+					has_policy_flag = residentbreeding_restricted
+				}
+				has_planet_flag = limited_rights_breeding_banned
+			}
+			NAND = {
+				owner = {
+					has_policy_flag = residentbreeding_restricted_habs
+				}
+				is_habitable_structre = yes
+			}
+		}
+		custom_tooltip = {
+			fail_text = SLAVE_BREEDING_RESTRICTED
+			NAND = {
+				owner = {
+					has_policy_flag = slavebreeding_restricted
+				}
+				NOR = {
+					has_planet_flag = slave_breeding_allowed
+					has_modifier = slave_colony
+				}	
+			}
+			NAND = {
+				owner = {
+					has_policy_flag = slavebreeding_restricted_habs
+				}
+				NOR = {
+					is_habitable_structre = no
+					has_modifier = slave_colony
+				}	
+			}
+		}
+		custom_tooltip = {
+			fail_text = decision_restrictpop_summary_tooltip_bottom
+			always = no 
+		}
+	}
+
+	effect = {
+		custom_tooltip = decision_restrictpop_summary_tooltip
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
 decision_restrictpop_limited_rights_living_banned_on = {
 	icon = default
 	owned_planets_only = yes
@@ -11,7 +113,13 @@ decision_restrictpop_limited_rights_living_banned_on = {
 	}
 	
 	potential = {
-		owner = { has_policy_flag = residentliving_restricted }
+		OR = {
+			owner = { has_policy_flag = residentliving_restricted }
+			AND = {
+				owner = { has_policy_flag = residentliving_restricted_habs }
+				is_habitable_structure = no
+			}
+		}
 		NOT = { has_planet_flag = limited_rights_living_banned }
 	}
 
@@ -40,7 +148,13 @@ decision_restrictpop_limited_rights_living_banned_off = {
 	}
 	
 	potential = {
-		owner = { has_policy_flag = residentliving_restricted }
+		OR = {
+			owner = { has_policy_flag = residentliving_restricted }
+			AND = {
+				owner = { has_policy_flag = residentliving_restricted_habs }
+				is_habitable_structure = no
+			}
+		}
 		has_planet_flag = limited_rights_living_banned
 	}
 
@@ -56,7 +170,7 @@ decision_restrictpop_limited_rights_living_banned_off = {
 	}
 }
 
-decision_restrictpop_resident_breeding_banned_on = {
+decision_restrictpop_limited_rights_breeding_banned_on = {
 	icon = default
 	owned_planets_only = yes
 	enactment_time = 1
@@ -69,7 +183,13 @@ decision_restrictpop_resident_breeding_banned_on = {
 	}
 	
 	potential = {
-		owner = { has_policy_flag = residentbreeding_restricted }
+		OR = {
+			owner = { has_policy_flag = residentbreeding_restricted }
+			AND = {
+				owner = { has_policy_flag = residentbreeding_restricted_habs }
+				is_habitable_structure = no
+			}
+		}
 		NOR = { 
 			has_planet_flag = limited_rights_breeding_banned 
 			has_planet_flag = limited_rights_living_banned
@@ -77,7 +197,7 @@ decision_restrictpop_resident_breeding_banned_on = {
 	}
 
 	effect = {
-		custom_tooltip = decision_restrictpop_resident_breeding_banned_on_tooltip
+		custom_tooltip = decision_restrictpop_limited_rights_breeding_banned_on_tooltip
 		hidden_effect = {
 			set_planet_flag = limited_rights_breeding_banned
 		}
@@ -88,7 +208,7 @@ decision_restrictpop_resident_breeding_banned_on = {
 	}
 }
 
-decision_restrictpop_resident_breeding_banned_off = {
+decision_restrictpop_limited_rights_breeding_banned_off = {
 	icon = default
 	owned_planets_only = yes
 	enactment_time = 1
@@ -101,13 +221,19 @@ decision_restrictpop_resident_breeding_banned_off = {
 	}
 	
 	potential = {
-		owner = { has_policy_flag = residentbreeding_restricted }
+		OR = {
+			owner = { has_policy_flag = residentbreeding_restricted }
+			AND = {
+				owner = { has_policy_flag = residentbreeding_restricted_habs }
+				is_habitable_structure = no
+			}
+		}
 		has_planet_flag = limited_rights_breeding_banned
 		NOT = { has_planet_flag = limited_rights_living_banned }
 	}
 
 	effect = { 
-		custom_tooltip = decision_restrictpop_resident_breeding_banned_off_tooltip
+		custom_tooltip = decision_restrictpop_limited_rights_breeding_banned_off_tooltip
 		hidden_effect = {
 			remove_planet_flag = limited_rights_breeding_banned
 		}
@@ -136,7 +262,13 @@ decision_restrictpop_slaves_living_banned_on = {
 	}
 	
 	potential = {
-		owner = { has_policy_flag = slaveliving_restricted }
+		OR = {
+			owner = { has_policy_flag = slaveliving_restricted }
+			AND = {
+				owner = { has_policy_flag = slaveliving_restricted_habs }
+				is_habitable_structure = no
+			}
+		}
 		NOT = { has_planet_flag = slave_living_banned }
 	}
 
@@ -165,7 +297,13 @@ decision_restrictpop_slaves_living_banned_off = {
 	}
 	
 	potential = {
-		owner = { has_policy_flag = slaveliving_restricted }
+		OR = {
+			owner = { has_policy_flag = slaveliving_restricted }
+			AND = {
+				owner = { has_policy_flag = slaveliving_restricted_habs }
+				is_habitable_structure = no
+			}
+		}
 		has_planet_flag = slave_living_banned
 	}
 
@@ -195,7 +333,13 @@ decision_restrictpop_slaves_breeding_allowed_on = {
 	}
 	
 	potential = {
-		owner = { has_policy_flag = slavebreeding_restricted }
+		OR = {
+			owner = { has_policy_flag = slavebreeding_restricted }
+			AND = {
+				owner = { has_policy_flag = slavebreeding_restricted_habs }
+				is_habitable_structure = no
+			}
+		}
 		NOR = { 
 			has_planet_flag = slave_living_banned
 			has_planet_flag = slave_breeding_allowed 
@@ -228,7 +372,13 @@ decision_restrictpop_slaves_breeding_allowed_off = {
 	}
 	
 	potential = {
-		owner = { has_policy_flag = slavebreeding_restricted }
+		OR = {
+			owner = { has_policy_flag = slavebreeding_restricted }
+			AND = {
+				owner = { has_policy_flag = slavebreeding_restricted_habs }
+				is_habitable_structure = no
+			}
+		}
 		has_planet_flag = slave_breeding_allowed
 		NOT = { has_planet_flag = slave_living_banned }
         NOT = { has_modifier = slave_colony }

@@ -23,23 +23,39 @@ species_can_live_on_planet = {
 	}
 	custom_tooltip = {
 		fail_text = RESIDENT_LIVING_RESTRICTED
-		exists = root.owner
 		NAND = {
+            exists = root.owner
 			root.owner = {
 				has_policy_flag = residentliving_restricted
 			}
 			root = { has_planet_flag = limited_rights_living_banned }
 			has_citizenship_type = { type = citizenship_limited country = root.owner }
 		}
+		NAND = {
+			exists = root.owner
+			root.owner = {
+				has_policy_flag = residentliving_restricted_habs
+			}
+			root = { is_habitable_structre = yes }
+			has_citizenship_type = { type = citizenship_limited country = root.owner }
+		}
 	}
 	custom_tooltip = {
 		fail_text = SLAVE_LIVING_RESTRICTED
-		exists = root.owner
 		NAND = {
+            exists = root.owner
 			root.owner = {
 				has_policy_flag = slaveliving_restricted
 			}
 			root = { has_planet_flag = slave_living_banned }
+			has_citizenship_type = { type = citizenship_slavery country = root.owner }
+		}
+		NAND = {
+			exists = root.owner
+			root.owner = {
+				has_policy_flag = slaveliving_restricted_habs
+			}
+			root = { is_habitable_structre = yes }
 			has_citizenship_type = { type = citizenship_slavery country = root.owner }
 		}
 	}
@@ -68,11 +84,30 @@ can_species_procreate = {
 	}
 	NAND = {
 		root.owner = {
+			has_policy_flag = residentbreeding_restricted_habs
+		}
+		root = { is_habitable_structre = yes }
+		has_citizenship_type = { type = citizenship_limited country = root.owner }
+	}
+	NAND = {
+		root.owner = {
 			has_policy_flag = slavebreeding_restricted
 		}
 		root = { 
 			NOR = {
 				has_planet_flag = slave_breeding_allowed
+				has_modifier = slave_colony
+			}			
+		}
+		has_citizenship_type = { type = citizenship_slavery country = root.owner }
+	}
+	NAND = {
+		root.owner = {
+			has_policy_flag = slavebreeding_restricted_habs
+		}
+		root = { 
+			NOR = {
+				is_habitable_structre = no
 				has_modifier = slave_colony
 			}			
 		}

@@ -1,1 +1,32 @@
+Control the ability of residence rights species and slaves to breed and access certain planets.
 
+[h1]4 New Policies[/h1][olist]
+[*] Mark certain planets off limits to [b]Resident[/b] species: they will not move to it or breed.  (Must not be egalitarian).
+[*] Mark certian planets such that [b]Resident[/b] species: they may migrate there, but will not breed on them. (Must not be egalitarian).
+[*] Mark certain planets off limits to [b]Enslaved[/b] species: they will not move to it or breed.
+[*] Ban [b]Enslaved[/b] species from breeding, except on Thrall Worlds and certain designated planets.
+[/olist]
+
+I always got annoyed that my slaves would just keep breeding on all my worlds, fine in the early game when I needed more miners, but later on I wanted more scientists from my main species.  Similarly I wanted to stop my [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1743133825]Starborn[/url] species being outbred by the lesser residence species on my habitats.
+
+If you enable first 3 polices (residence living on, residence breeding, slaves living on), they are unrestricted by default, and enable planetary decisions to mark a planet as not-for-living / not-for-breeding.  
+
+The last policy, slave breeding, enabling this policy will immiedately stop slaves from beeding on all planets except thrall worlds and worlds that you specifically enable using a planetary decision.
+
+[b]Note:[/b] None of these will allow a species to breed or migrate if population controls or migration controls are enabled at the species level.  In order to use these you must allow migration and breeding for the species, and then use these policies and decisions to forbid them from specific planets.
+
+As I wrote this to play with Starborn, all 4 policies have an option where they are applied by default to all orbital structures, this is [i]all[/i] habitable structures: habitats and ringworlds (and extra if you have mods), if you enable this there is no way to selectively disable it for certain structures.
+
+[h1]Compatibility[/h1]
+This mod makes changes to 2 rules from game_rules: [list]
+[*]species_can_live_on_planet 
+[*]can_species_procreate
+[/list]
+Anything that also modifies those rules will obviously conflict, otherwise you will be fine.
+
+I do not intend to add more features unless something comes up in a game I play that I want.
+
+[b]Please Rate and Subscribe as it helps others find the mods[/b]
+[img]https://i.imgur.com/fVVaDCS.gif[/img]
+
+[url=https://discordapp.com/invite/CMjnnET][img]https://i.imgur.com/4Und3QN.png[/img][/url]

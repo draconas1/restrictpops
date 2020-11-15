@@ -9,8 +9,12 @@
 
  residentliving_restricted:0 "Restricted Planets"
  residentliving_restricted_name:0 "everywhere_name"
- residentliving_restricted_desc:0 "Some of our planets may be designated for §Y$citizenship_full$§! species only"
- RESIDENT_LIVING_RESTRICTED:0 "§Y$citizenship_limited$§! species are forbidden from living on this planet"
+ residentliving_restricted_desc:0 "Some of our planets may be designated for §Y$citizenship_full$§! species (and their slaves) only"
+
+ residentliving_restricted_habs:0 "Restricted From Habitats"
+ residentliving_restricted_habs_name:0 "everywhere_name"
+ residentliving_restricted_habs_desc:0 "All habitats and habitable structures are for §Y$citizenship_full$§! species only and additional planets may be restricted by decision."
+ RESIDENT_LIVING_RESTRICTED:0 "£trigger_no£ §Y$citizenship_limited$§! species are forbidden from living on this planet"
 
  decision_restrictpop_limited_rights_living_banned_on:0 "Ban §Y$citizenship_limited$§! pops from living here"
  decision_restrictpop_limited_rights_living_banned_on_desc:0 "This world has been designated as only for those who posses §Y$citizenship_full$§! and their property"
@@ -20,7 +24,7 @@
  decision_restrictpop_limited_rights_living_banned_off_desc:0 "This world is open to all citizens of our empire"
  decision_restrictpop_limited_rights_living_banned_off_tooltip:0 "§Y$citizenship_limited$§! pops can grow and migrate here if their species is allowed"
 
- policy_residentbreeding:0 "Planetary Pop Controls"
+ policy_residentbreeding:0 "Resident Planetary Pop Controls"
  policy_residentbreeding_desc:0 "On certain worlds we may want more control of the populations of the lesser species"
 
  residentbreeding_everywhere:0 "No Restrictions"
@@ -30,6 +34,11 @@
  residentbreeding_restricted:0 "Restricted Planets"
  residentbreeding_restricted_name:0 "everywhere_name"
  residentbreeding_restricted_desc:0 "Population controls may be applied to a planet preventing all §Y$citizenship_limited$§! species population from growing.  §YBy default they may grow.§!"
+
+ residentbreeding_restricted_habs:0 "Restricted From Habitats"
+ residentbreeding_restricted_habs_name:0 "everywhere_name"
+ residentbreeding_restricted_habs_desc:0 "§Y$citizenship_limited$§! will not grow on habitats or other habitable structures.  Additional population controls may be applied on specific planets."
+ RESIDENT_BREEDING_RESTRICTED:0 "£trigger_no£ Population of §Y$citizenship_limited$§! species are controlled on this planet"
 
  decision_restrictpop_limited_rights_breeding_banned_on:0 "Limit §Y$citizenship_limited$§! pops growth"
  decision_restrictpop_limited_rights_breeding_banned_on_desc:0 "§Y$citizenship_limited$§! citizens who wish to live here must abide by population control laws"
@@ -45,12 +54,16 @@
 
  slaveliving_everywhere:0 "No Restrictions"
  slaveliving_everywhere_name:0 "everywhere_name"
- slaveliving_everywhere_desc:0 "Slaves may be moved where-ever their owners wish"
+ slaveliving_everywhere_desc:0 "§Y$citizenship_slavery$§! may be moved where-ever their owners wish"
 
  slaveliving_restricted:0 "Restricted Planets"
  slaveliving_restricted_name:0 "everywhere_name"
- slaveliving_restricted_desc:0 "Some of our planets may be designated such that no slaves may be moved onto them"
- SLAVE_LIVING_RESTRICTED:0 "Slave species are forbidden from living on this planet"
+ slaveliving_restricted_desc:0 "Some of our planets may be designated such that no §Y$citizenship_slavery$§! may be moved onto them"
+
+ slaveliving_restricted_habs:0 "Restricted From Habitats"
+ slaveliving_restricted_habs_name:0 "everywhere_name"
+ slaveliving_restricted_habs_desc:0 "All habitats and habitable structures are designated such that no slaves may be moved onto them, and additional planets may be restricted by decision"
+ SLAVE_LIVING_RESTRICTED:0 "£trigger_no£ §Y$citizenship_slavery$§! species are forbidden from living on this planet"
 
  decision_restrictpop_slaves_living_banned_on:0 "Ban §YEnslaved§! pops from living here"
  decision_restrictpop_slaves_living_banned_on_desc:0 "Just because there are slaves allowed in the empire, does not mean they allowed are here."
@@ -65,11 +78,16 @@
 
  slavebreeding_everywhere:0 "No Restrictions"
  slavebreeding_everywhere_name:0 "everywhere_name"
- slavebreeding_everywhere_desc:0 "Slave breeding is controlled at the species level, planets may not override it"
+ slavebreeding_everywhere_desc:0 "§Y$citizenship_slavery$§! breeding is controlled at the species level, planets may not override it"
 
  slavebreeding_restricted:0 "Slave Breeding Restricted"
  slavebreeding_restricted_name:0 "everywhere_name"
- slavebreeding_restricted_desc:0 "Slave populations are strictly controlled except on §Y$slave_colony$§! and others where rampant breeding is specifically allowed.  §YBy default slave pops will not grow.§!"
+ slavebreeding_restricted_desc:0 "§Y$citizenship_slavery$§! populations are strictly controlled except on §Y$slave_colony$§! and others where rampant breeding is specifically allowed.  §YBy default slave pops will not grow.§!"
+
+ slavebreeding_restricted_habs:0 "Slave Breeding Restricted on Habitats"
+ slavebreeding_restricted_habs_name:0 "everywhere_name"
+ slavebreeding_restricted_habs_desc:0 "§Y$citizenship_slavery$§! populations are strictly controlled on habitats and habitable structures.  They may freely grow on §Y$slave_colony$§! and other planets."
+ SLAVE_BREEDING_RESTRICTED:0 "£trigger_no£ Population of §Y$citizenship_slavery$§! species are controlled on this planet"
 
  decision_restrictpop_slaves_breeding_allowed_on:0 "Allow slave population growth"
  decision_restrictpop_slaves_breeding_allowed_on_desc:0 "Slaves are allowed to breed, growing our investment"
@@ -78,3 +96,8 @@
  decision_restrictpop_slaves_breeding_allowed_off:0 "Limit slave population growth"
  decision_restrictpop_slaves_breeding_allowed_off_desc:0 "The slave population will be maintained at a stable level"
  decision_restrictpop_slaves_breeding_allowed_off_tooltip:0 "§YEnslaved§! pops will not grow on this planet"
+
+ decision_restrictpop_summary:0 "Population Controls Overview"
+ decision_restrictpop_summary_desc:0 "So many laws, it is hard to keep track"
+ decision_restrictpop_summary_tooltip:0 "Hover over to see which species have restrictions on this planet"
+ decision_restrictpop_summary_tooltip_bottom:0 "If there are no other reasons why this is disabled then there are no pop controls on this planet.  Otherwise this lists what pop controls are active"

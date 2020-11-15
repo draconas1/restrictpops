@@ -37,6 +37,27 @@ residentliving = {
 			}						
 		}
 	}
+
+	option = {
+		name = "residentliving_restricted_habs"
+		
+		policy_flags = {
+			residentliving_restricted_habs
+		}
+
+		valid = {
+			NOR = {
+				has_ethic = ethic_egalitarian
+				has_ethic = ethic_fanatic_egalitarian
+			}
+		}
+		
+		AI_weight = {
+			modifier = {
+				factor = 0
+			}						
+		}
+	}
 }
 
 residentbreeding = {
@@ -63,6 +84,27 @@ residentbreeding = {
 		
 		policy_flags = {
 			residentbreeding_restricted
+		}
+
+		valid = {
+			NOR = {
+				has_ethic = ethic_egalitarian
+				has_ethic = ethic_fanatic_egalitarian
+			}
+		}
+		
+		AI_weight = {
+			modifier = {
+				factor = 0
+			}						
+		}
+	}
+
+	option = {
+		name = "residentbreeding_restricted_habs"
+		
+		policy_flags = {
+			residentbreeding_restricted_habs
 		}
 
 		valid = {
@@ -120,6 +162,20 @@ slaveliving = {
 			}						
 		}
 	}
+
+	option = {
+		name = "slaveliving_restricted_habs"
+		
+		policy_flags = {
+			slaveliving_restricted_habs
+		}
+
+		AI_weight = {
+			modifier = {
+				factor = 0
+			}						
+		}
+	}
 }
 
 slavebreeding = {
@@ -153,6 +209,27 @@ slavebreeding = {
 		
 		policy_flags = {
 			slavebreeding_restricted
+		}
+
+		valid = {
+			NOR = {
+				has_ethic = ethic_egalitarian
+				has_ethic = ethic_fanatic_egalitarian
+			}
+		}
+		
+		AI_weight = {
+			modifier = {
+				factor = 0
+			}						
+		}
+	}
+
+	option = {
+		name = "slavebreeding_restricted_habs"
+		
+		policy_flags = {
+			slavebreeding_restricted_habs
 		}
 
 		valid = {
