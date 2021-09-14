@@ -17,9 +17,21 @@ species_can_live_on_planet = {
 			}
 		}
 	}
-	NAND = {
-		root = { is_planet_class = pc_hive }
-		NOT = { has_trait = trait_hive_mind }
+	if = {
+		limit = {
+			root = { is_planet_class = pc_hive }
+		}
+		OR = {
+			has_trait = trait_hive_mind
+			AND = { #Necrophage Hive Mind can have Necrophytes
+				exists = root.owner
+				root.owner = {
+					is_hive_empire = yes
+					has_origin = origin_necrophage
+					prev = { species_can_be_necrophaged = yes }
+				}
+			}
+		}
 	}
 	custom_tooltip = {
 		fail_text = RESIDENT_LIVING_RESTRICTED
@@ -36,7 +48,7 @@ species_can_live_on_planet = {
 			root.owner = {
 				has_policy_flag = residentliving_restricted_habs
 			}
-			root = { is_habitable_structre = yes }
+			root = { habitable_structure = yes }
 			has_citizenship_type = { type = citizenship_limited country = root.owner }
 		}
 	}
@@ -55,7 +67,7 @@ species_can_live_on_planet = {
 			root.owner = {
 				has_policy_flag = slaveliving_restricted_habs
 			}
-			root = { is_habitable_structre = yes }
+			root = { habitable_structure = yes }
 			has_citizenship_type = { type = citizenship_slavery country = root.owner }
 		}
 	}
@@ -86,7 +98,7 @@ can_species_procreate = {
 		root.owner = {
 			has_policy_flag = residentbreeding_restricted_habs
 		}
-		root = { is_habitable_structre = yes }
+		root = { habitable_structure = yes }
 		has_citizenship_type = { type = citizenship_limited country = root.owner }
 	}
 	NAND = {
@@ -107,7 +119,7 @@ can_species_procreate = {
 		}
 		root = { 
 			NOR = {
-				is_habitable_structre = no
+				habitable_structure = no
 				has_modifier = slave_colony
 			}			
 		}
@@ -120,6 +132,7 @@ can_species_procreate = {
 		NOT = {
 			root = {
 				any_owned_species = {
+					has_population_control = { country = root.owner value = no }
 					species_can_be_necrophaged = yes
 				}
 			}
