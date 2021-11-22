@@ -138,4 +138,5 @@ can_species_procreate = {
 			}
 		}
 	}
+	NOT = { has_species_flag = nivlac_no_procreation }
 }
