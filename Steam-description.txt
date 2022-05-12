@@ -1,4 +1,4 @@
-[h1]Planetary Pop Restrictions (3.3)[/h1]
+[h1]Planetary Pop Restrictions (3.4)[/h1]
 Control the ability of residence rights species and slaves to breed and access certain planets.
 
 [h1]4 New Policies[/h1][olist]
