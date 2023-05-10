@@ -1,9 +1,9 @@
-[h1]Planetary Pop Restrictions (3.6)[/h1]
+[h1]Planetary Pop Restrictions (3.8)[/h1]
 Control the ability of residence rights species and slaves to breed and access certain planets.
 
 [h1]4 New Policies[/h1][olist]
-[*] Mark certain planets off limits to [b]Resident[/b] species: they will not move to it or breed.  (Must not be egalitarian).
-[*] Mark certain planets such that [b]Resident[/b] species may migrate there, but will not breed on them. (Must not be egalitarian).
+[*] Mark certain planets off limits to [b]Resident[/b] species: they will not move to it or breed.  (Must not be fanatical egalitarian).
+[*] Mark certain planets such that [b]Resident[/b] species may migrate there, but will not breed on them. (Must not be fanatical egalitarian).
 [*] Mark certain planets off limits to [b]Enslaved[/b] species: they will not move to it or breed. (Or be put there by the Raiding bombardment stance)
 [*] Ban [b]Enslaved[/b] species from breeding, except on Thrall Worlds and certain designated planets.
 [/olist]
@@ -38,4 +38,3 @@ I do not intend to add more features unless something comes up in a game I play 
 [img]https://i.imgur.com/fVVaDCS.gif[/img]
 
 [url=https://discordapp.com/invite/CMjnnET][img]https://i.imgur.com/4Und3QN.png[/img][/url]
-

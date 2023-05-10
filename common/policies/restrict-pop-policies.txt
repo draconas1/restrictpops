@@ -26,7 +26,6 @@ residentliving = {
 
 		valid = {
 			NOR = {
-				has_ethic = ethic_egalitarian
 				has_ethic = ethic_fanatic_egalitarian
 			}
 		}
@@ -47,7 +46,6 @@ residentliving = {
 
 		valid = {
 			NOR = {
-				has_ethic = ethic_egalitarian
 				has_ethic = ethic_fanatic_egalitarian
 			}
 		}
@@ -88,7 +86,6 @@ residentbreeding = {
 
 		valid = {
 			NOR = {
-				has_ethic = ethic_egalitarian
 				has_ethic = ethic_fanatic_egalitarian
 			}
 		}
@@ -109,7 +106,6 @@ residentbreeding = {
 
 		valid = {
 			NOR = {
-				has_ethic = ethic_egalitarian
 				has_ethic = ethic_fanatic_egalitarian
 			}
 		}
@@ -126,7 +122,6 @@ residentbreeding = {
 slaveliving = {
 	potential = {
 		NOT = { has_ethic = "ethic_gestalt_consciousness" }
-		NOT = { is_subject_type = signatory }
 		OR = {
 			has_ethic = ethic_authoritarian
 			has_ethic = ethic_fanatic_authoritarian
@@ -181,7 +176,6 @@ slaveliving = {
 slavebreeding = {
 	potential = {
 		NOT = { has_ethic = "ethic_gestalt_consciousness" }
-		NOT = { is_subject_type = signatory }
 		OR = {
 			has_ethic = ethic_authoritarian
 			has_ethic = ethic_fanatic_authoritarian
@@ -213,7 +207,6 @@ slavebreeding = {
 
 		valid = {
 			NOR = {
-				has_ethic = ethic_egalitarian
 				has_ethic = ethic_fanatic_egalitarian
 			}
 		}
@@ -234,7 +227,6 @@ slavebreeding = {
 
 		valid = {
 			NOR = {
-				has_ethic = ethic_egalitarian
 				has_ethic = ethic_fanatic_egalitarian
 			}
 		}

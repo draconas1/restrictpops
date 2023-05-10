@@ -108,7 +108,7 @@ decision_restrictpop_limited_rights_living_banned_on = {
 	resources = {
 		category = decisions
 		cost = { 
-			influence = 10
+			unity = 10
 		}
 	}
 	
@@ -143,7 +143,7 @@ decision_restrictpop_limited_rights_living_banned_off = {
 	resources = {
 		category = decisions
 		cost = { 
-			influence = 10
+			unity = 10
 		}
 	}
 	
@@ -178,7 +178,7 @@ decision_restrictpop_limited_rights_breeding_banned_on = {
 	resources = {
 		category = decisions
 		cost = { 
-			influence = 10
+			unity = 10
 		}
 	}
 	
@@ -216,7 +216,7 @@ decision_restrictpop_limited_rights_breeding_banned_off = {
 	resources = {
 		category = decisions
 		cost = { 
-			influence = 10
+			unity = 10
 		}
 	}
 	
@@ -257,7 +257,7 @@ decision_restrictpop_slaves_living_banned_on = {
 	resources = {
 		category = decisions
 		cost = { 
-			influence = 10
+			unity = 10
 		}
 	}
 	
@@ -292,7 +292,7 @@ decision_restrictpop_slaves_living_banned_off = {
 	resources = {
 		category = decisions
 		cost = { 
-			influence = 10
+			unity = 10
 		}
 	}
 	
@@ -328,7 +328,7 @@ decision_restrictpop_slaves_breeding_allowed_on = {
 	resources = {
 		category = decisions
 		cost = { 
-			influence = 10
+			unity = 10
 		}
 	}
 	
@@ -367,7 +367,7 @@ decision_restrictpop_slaves_breeding_allowed_off = {
 	resources = {
 		category = decisions
 		cost = { 
-			influence = 10
+			unity = 10
 		}
 	}
 	
