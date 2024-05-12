@@ -1,4 +1,4 @@
-[h1]Planetary Pop Restrictions (3.11)[/h1]
+[h1]Planetary Pop Restrictions (3.12)[/h1]
 Control the ability of residence rights species and slaves to breed and access certain planets.
 
 [h1]4 New Policies[/h1][olist]
@@ -23,7 +23,7 @@ This mod makes changes to 2 rules from game_rules: [list]
 [*]species_can_live_on_planet 
 [*]can_species_procreate
 [/list]
-Anything that also modifies those rules will obviously conflict, otherwise you will be fine.
+Anything that also modifies those rules will obviously conflict, otherwise you will be fine.  Merger of rules supports this mod!  thanks Inny!
 
 I do not intend to add more features unless something comes up in a game I play that I want.
 
