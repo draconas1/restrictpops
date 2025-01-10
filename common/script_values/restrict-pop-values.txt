@@ -1,0 +1,4 @@
+# Requested by Inny for merger of rules
+planet_pop_restrict_mod  = {
+	base = 1
+}
